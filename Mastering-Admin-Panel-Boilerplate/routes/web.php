@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/',[
+    'uses'  =>  'App\Http\Controllers\AdminDashboardController@index',
+    'as'    =>  '/',
+    'middleware'  =>  ['auth:sanctum', 'verified']
+]);
+Route::get('/dashboard',[
+    'uses'  =>  'App\Http\Controllers\AdminDashboardController@dashboard',
+    'as'    =>  'dashboard',
+    'middleware'  =>  ['auth:sanctum', 'verified']
+]);
+
+
+
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');

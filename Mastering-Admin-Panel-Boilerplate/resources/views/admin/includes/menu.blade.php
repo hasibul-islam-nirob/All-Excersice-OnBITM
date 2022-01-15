@@ -41,6 +41,20 @@
             </li>
 
 
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
+                    <span class="nav-label">Brand</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="">Add Brand</a>
+                    </li>
+                    <li>
+                        <a href="">Manage Brand</a>
+                    </li>
+                </ul>
+            </li>
+
+
 
 
 

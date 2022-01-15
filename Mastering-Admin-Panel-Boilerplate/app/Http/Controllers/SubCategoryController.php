@@ -30,20 +30,24 @@ class SubCategoryController extends Controller
             'subCategories' => $this->subCategories
         ]);
     }
-//
-//    function deleteCategory($id){
-//        Category::categoryDelete($id);
-//        return redirect('/manage-category')->with('message','Category Delete Successfully....!!');
-//    }
-//    function editCategoryPage($id){
-//        $this->category = Category::find($id);
-//        return view('admin.category.update',[
-//            'category' => $this->category
-//        ]);
-//    }
-//
-//    function updateCategory(Request $request, $id){
-//        Category::updateCategory($request, $id);
-//        return redirect()->back()->with('message','Category Update Successfully....!!');
-//    }
+
+    function editSubCategoryPage($id){
+        $this->subCategories = SubCategory::find($id);
+        $this->categories = Category::all();
+        return view('admin.sub-category.update',[
+            'subCategories' => $this->subCategories,
+            'categories' => $this->categories
+        ]);
+    }
+
+    function updateSubCategory(Request $request, $id){
+        SubCategory::updateSubCategory($request, $id);
+        return redirect()->back()->with('message','Sub-Category Update Successfully....!!');
+    }
+
+    function deleteSubCategory($id){
+        SubCategory::deleteSubCategory($id);
+        return redirect('/manage-category')->with('message','Sub-Category Delete Successfully....!!');
+    }
+
 }

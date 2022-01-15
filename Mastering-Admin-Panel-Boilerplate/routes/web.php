@@ -72,9 +72,6 @@ Route::post('/add-subCategory',[
     'as'            => 'add.subCategory',
     'middleware'    => ['auth:sanctum', 'verified']
 ]);
-
-
-
 Route::get('/manage-subCategory',[
     'uses'          => 'App\Http\Controllers\SubCategoryController@showAllsubCategory',
     'as'            => 'manage-subCategory',
@@ -91,12 +88,18 @@ Route::post('/update-subCategory/{id}',[
     'middleware'    => ['auth:sanctum', 'verified']
 ]);
 
+
 Route::post('/delete-subCategory/{id}',[
     'uses'          => 'App\Http\Controllers\SubCategoryController@deleteSubCategory',
     'as'            => 'delete.subCategory',
     'middleware'    => ['auth:sanctum', 'verified']
 ]);
 // ========= Sub Category Route End  =====================
+
+
+// ========= Brand Route Start  =====================
+
+// ========= Brand Route End  =====================
 
 
 

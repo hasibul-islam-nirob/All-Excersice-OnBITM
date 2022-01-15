@@ -34,19 +34,25 @@
                         @foreach($subCategories as $subCategory)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$subCategory->Category->category_name}}</td>
+                                <td>
+                                    @if(empty($subCategory->category_id != null))
+                                        {!! 'empty'!!}
+                                    @else
+                                        {{$subCategory->Category->category_name}}
+                                    @endif
+                                </td>
                                 <td>{{$subCategory->sub_category_name}}</td>
                                 <td>{{$subCategory->sub_category_description}}</td>
                                 <td>{{$subCategory->status == 1 ? 'Publish' : 'Unpublish' }}</td>
                                 <td>
-                                    <a href="{{route('edit-category',['id'=>$subCategory->id])}}" class="btn btn-danger">
+                                    <a href="{{route('edit-subCategory',['id'=>$subCategory->id])}}" class="btn btn-danger">
                                         <i class="fa fa-edit"></i>
                                     </a>
 
-                                    <a href="" class="btn btn-success" onclick="event.preventDefault(); document.getElementById('categoryDeleteID{{$subCategory->id}}').submit();">
+                                    <a href="" class="btn btn-success" onclick="event.preventDefault(); document.getElementById('subCategoryDeleteID{{$subCategory->id}}').submit();">
                                         <i class="fa fa-trash"></i>
                                     </a>
-                                    <form action="{{route('delete.category',['id'=>$subCategory->id])}}" method="post" id="categoryDeleteID{{$subCategory->id}}">
+                                    <form action="{{route('delete.subCategory',['id'=>$subCategory->id])}}" method="post" id="subCategoryDeleteID{{$subCategory->id}}">
                                         @csrf
                                     </form>
                                 </td>

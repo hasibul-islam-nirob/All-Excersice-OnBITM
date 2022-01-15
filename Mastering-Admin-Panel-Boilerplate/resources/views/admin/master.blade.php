@@ -32,5 +32,6 @@
 <!-- END PAGA BACKDROPS-->
 
 @include('admin.includes.script')
+@yield('script')
 </body>
 </html>

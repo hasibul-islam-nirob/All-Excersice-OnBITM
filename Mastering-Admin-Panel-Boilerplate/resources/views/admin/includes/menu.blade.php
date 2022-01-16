@@ -46,10 +46,23 @@
                     <span class="nav-label">Brand</span><i class="fa fa-angle-left arrow"></i></a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a href="">Add Brand</a>
+                        <a href="{{route('brand')}}">Add Brand</a>
                     </li>
                     <li>
-                        <a href="">Manage Brand</a>
+                        <a href="{{route('manage-brand')}}">Manage Brand</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
+                    <span class="nav-label">Product</span><i class="fa fa-angle-left arrow"></i></a>
+                <ul class="nav-2-level collapse">
+                    <li>
+                        <a href="{{route('product')}}">Add Product</a>
+                    </li>
+                    <li>
+                        <a href="{{route('manage-product')}}">Manage Product</a>
                     </li>
                 </ul>
             </li>

@@ -32,9 +32,6 @@ class Category extends Model
     public static function categoryDelete($id){
         self::$category = Category::find($id);
         self::$category->delete();
-
-        self::$subCategory = new SubCategory();
-
     }
 
 

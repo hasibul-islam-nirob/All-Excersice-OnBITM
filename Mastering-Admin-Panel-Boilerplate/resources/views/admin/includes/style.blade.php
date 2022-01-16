@@ -8,3 +8,4 @@
 <link href="{{asset('/')}}assets/css/main.min.css" rel="stylesheet" />
 <!-- PAGE LEVEL STYLES-->
 <link href="{{asset('/')}}assets/vendors/DataTables/datatables.min.css" rel="stylesheet" />
+<link href="{{asset('/')}}assets/vendors/summernote/dist/summernote.css" rel="stylesheet" />

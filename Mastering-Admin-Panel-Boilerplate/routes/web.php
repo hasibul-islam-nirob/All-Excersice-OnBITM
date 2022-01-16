@@ -87,8 +87,6 @@ Route::post('/update-subCategory/{id}',[
     'as'            => 'update.subCategory',
     'middleware'    => ['auth:sanctum', 'verified']
 ]);
-
-
 Route::post('/delete-subCategory/{id}',[
     'uses'          => 'App\Http\Controllers\SubCategoryController@deleteSubCategory',
     'as'            => 'delete.subCategory',
@@ -98,8 +96,71 @@ Route::post('/delete-subCategory/{id}',[
 
 
 // ========= Brand Route Start  =====================
-
+Route::get('/brand',[
+    'uses'          => 'App\Http\Controllers\BrandController@index',
+    'as'            => 'brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/add-brand',[
+    'uses'          => 'App\Http\Controllers\BrandController@addBrand',
+    'as'            => 'add.brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::get('/manage-brand',[
+    'uses'          => 'App\Http\Controllers\BrandController@showAllBrand',
+    'as'            => 'manage-brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::get('/edit-brand/{id}',[
+    'uses'          => 'App\Http\Controllers\BrandController@editBrandPage',
+    'as'            => 'edit-brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/update-brand/{id}',[
+    'uses'          => 'App\Http\Controllers\BrandController@updateBrand',
+    'as'            => 'update.brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/delete-brand/{id}',[
+    'uses'          => 'App\Http\Controllers\BrandController@deleteBrand',
+    'as'            => 'delete.brand',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
 // ========= Brand Route End  =====================
+
+
+// ========= Product Route Start  =====================
+Route::get('/product',[
+    'uses'          => 'App\Http\Controllers\ProductController@index',
+    'as'            => 'product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/add-product',[
+    'uses'          => 'App\Http\Controllers\ProductController@addProduct',
+    'as'            => 'add.product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::get('/manage-product',[
+    'uses'          => 'App\Http\Controllers\ProductController@showAllProduct',
+    'as'            => 'manage-product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::get('/edit-product/{id}',[
+    'uses'          => 'App\Http\Controllers\ProductController@editProductPage',
+    'as'            => 'edit-product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/update-product/{id}',[
+    'uses'          => 'App\Http\Controllers\ProductController@updateProduct',
+    'as'            => 'update.product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+Route::post('/delete-product/{id}',[
+    'uses'          => 'App\Http\Controllers\ProductController@deleteProduct',
+    'as'            => 'delete.product',
+    'middleware'    => ['auth:sanctum', 'verified']
+]);
+// ========= Product Route End  =====================
 
 
 
